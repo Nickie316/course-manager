@@ -7,19 +7,20 @@ import { Course } from './course';
    // template: '<h2>Course List</h2>' // Insere conteudo HTML, por etica até 5 linhas
    templateUrl: './course-list.component.html'
 })
-export class CourseListComponent implements OnInit{
+export class CourseListComponent implements OnInit {
+
+   filteredCourses: Course[] = [];
 
    _courses: Course[] = []; // Herda a estrutura do elemento no arquivo course.ts
 
-   filteredCourses: Course[] = []
 
    _filterBy!: string // Informa que a Variavel ficara somente nesse componente
-   course: any;
+   // course: any;
 
    constructor(private courseService: CourseService) { }
    
    ngOnInit(): void {
-      this._courses = this.courseService.retriveAll()
+      this._courses = this.courseService.retrieveAll()
       this.filteredCourses = this._courses
    }
 
