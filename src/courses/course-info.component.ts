@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
 import { Course } from './course';
 import { CourseService } from './course.service';
 
@@ -11,7 +11,6 @@ export class CourseInfoComponent implements OnInit {
    course!: Course ;
 
    constructor(private activatedRoute: ActivatedRoute, private courseService: CourseService) { }
-
 
    ngOnInit(): void {
 
